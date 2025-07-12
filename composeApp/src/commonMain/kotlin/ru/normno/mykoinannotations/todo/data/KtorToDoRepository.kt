@@ -8,7 +8,7 @@ class KtorToDoRepository(
 ) : ToDoRepository {
     override suspend fun getTodos(): List<String> {
         return (1..10).map {
-            it.toString()
+            "Item $it"
         }
     }
 }
