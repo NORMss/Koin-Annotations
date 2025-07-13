@@ -4,6 +4,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import org.koin.core.annotation.Module
 import org.koin.core.annotation.Single
+import ru.normno.mykoinannotations.core.data.HttpClientEngineFactory
 
 @Module
 class  AppModule {
@@ -12,4 +13,7 @@ class  AppModule {
     fun httpClient(engine: HttpClientEngine): HttpClient = HttpClient(engine) {
 
     }
+
+    @Single
+    fun httpClientEngine(): HttpClientEngine = HttpClientEngineFactory().getHttpEngine()
 }
