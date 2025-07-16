@@ -90,8 +90,8 @@ ksp {
     arg("KOIN_CONFIG_CHECK","true")
 }
 
-project.tasks.withType(KotlinCompilationTask::class.java).configureEach {
-    if(name != "kspCommonMainKotlinMetadata") {
+tasks.configureEach {
+    if (name == "kspDebugKotlinAndroid") {
         dependsOn("kspCommonMainKotlinMetadata")
     }
 }
